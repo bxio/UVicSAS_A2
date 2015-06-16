@@ -1,0 +1,10 @@
+s=tf('s');
+Kp=1.5757;
+Ki=1.05;
+Kd=0.591;
+U=(Kp*s+Kd*s^2+Ki)/s;
+P=40/(2*s^3+10*s^2+82*s+10);
+K=10.0;
+E=exp(-s);
+H=feedback(K*P,1);
+step(H);
